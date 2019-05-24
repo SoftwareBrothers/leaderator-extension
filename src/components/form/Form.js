@@ -27,8 +27,9 @@ class Form extends Component {
           <FormRowInput label="URL" fieldName="url" errorMessage={errorMessages.required} onChange={() => {}} />
           <FormRowInput label="E-mail" fieldName="email" errorMessage={errorMessages.required} onChange={() => {}} />
           <FormRowRadio label="Gender" fieldName="gender" optionsLabels={['Male', 'Female']} options={['male', 'female']} errorMessage={errorMessages.required} onChange={() => {}} />
-          <FormRowDropdown label="Title" fieldName="title" options={['CO', 'CTO']} errorMessage={errorMessages.required} onChange={() => {}} />
-          <FormRowDropdown label="City" fieldName="city" options={['London', 'Wroclaw']} errorMessage={errorMessages.required} onChange={() => {}} />
+          <FormRowDropdown label="Title" fieldName="title" options={this.props.fieldOptions.titles} errorMessage={errorMessages.required} onChange={() => {}} />
+          <FormRowDropdown label="Country" fieldName="country" options={this.props.fieldOptions.countries} errorMessage={errorMessages.required} onChange={() => {}} />
+          <FormRowDropdown label="City" fieldName="city" options={this.props.fieldOptions.cities} errorMessage={errorMessages.required} onChange={() => {}} />
           <FormRowInput label="Address" fieldName="address" onChange={() => {}} />
           <FormRowInput label="Found on" fieldName="foundOn" errorMessage={errorMessages.required} onChange={() => {}} />
           <FormRowInput label="Note" fieldName="note" onChange={() => {}} />
@@ -36,6 +37,7 @@ class Form extends Component {
             <button className={styles.submit} type="submit">Add prospect</button>
             <button className={styles.reset}>Clear form</button>
           </div>
+          <button onClick={(e) => this.props.onLogout(e)}>logOut</button>
         </form>
       </div>
     );
@@ -45,9 +47,10 @@ class Form extends Component {
 export default Form;
 
 Form.propTypes = {
-  domain: PropTypes.string,
+  onLogout: PropTypes.func.isRequired,
+  fieldOptions: PropTypes.arrayOf({}),
 };
 
 Form.defaultProps = {
-  domain: '',
+  fieldOptions: {},
 };

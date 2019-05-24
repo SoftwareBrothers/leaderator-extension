@@ -10,6 +10,14 @@ export const FormRowInput = props => (
   </div>
 );
 
+export const FormRowPassword = props => (
+  <div className={styles.form_row}>
+    <label htmlFor={props.fieldName}>{props.label}</label>
+    <input type="password" name={props.fieldName} id={props.fieldName} onChange={e => props.onChange(e)}/>
+    {props.error && <span className={styles.error}>{props.errorMessage}</span>}
+  </div>
+);
+
 export const FormRowDropdown = props => (
   <div className={styles.form_row}>
     <label htmlFor={props.fieldName}>{props.label}</label>
@@ -50,6 +58,14 @@ export const FormRowRadio = props => (
 
 
 FormRowInput.propTypes = {
+  fieldName: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  errorMessage: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  error: PropTypes.bool.isRequired,
+};
+
+FormRowPassword.propTypes = {
   fieldName: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   errorMessage: PropTypes.string.isRequired,
