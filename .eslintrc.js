@@ -23,6 +23,8 @@ module.exports = {
   "rules": {
     "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "react/destructuring-assignment": [0, "never"],
+    "class-methods-use-this": [0, "never"],
     "jsx-a11y/label-has-for": [2, {
       "components": ["Label"],
       "required": {

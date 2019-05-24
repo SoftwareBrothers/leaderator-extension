@@ -4,13 +4,31 @@
     grid-gap: .8em;
     background: #eee;
     padding: 1.2em;
+    width: 290px;
 }
-.myForm > label  {
-    grid-row: auto;
+
+.form_footer {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    justify-content: space-between;
+    width: 250px;
 }
-.myForm > input,
-.myForm > textarea,
-.myForm > button {
-    border: none;
-    padding: 1em;
+
+.form_footer button{
+    height: 30px;
+    border: 1px solid #bbb;
+    width: 100px;
+}
+
+.submit {
+    background: darkgreen;
+    color: #fff;
+}
+
+.submit:hover{
+    filter: brightness(150%);
+}
+
+.reset:hover {
+    filter: brightness(70%);
 }

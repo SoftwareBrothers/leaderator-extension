@@ -1,0 +1,39 @@
+.form_row {
+    display: grid;
+    grid-row-gap: 3px;
+    grid-template-columns: 250px;
+}
+
+label{
+    margin-bottom: 5px;
+}
+.form_row input, .form_row select {
+    height: 28px;
+    border: 1px solid #bbb;
+    width: 250px;
+}
+
+.radioOptions {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    margin-top: 5px;
+    width: 250px;
+}
+
+.form_row input:hover {
+    border: 1px solid #ddd;
+}
+
+.form_row select {
+    height: 30px;
+}
+
+.form_row input.radio, .form_row input.checkbox {
+    height: 10px;
+}
+
+.error {
+    color: #ff0000;
+    font-size: 12px;
+}

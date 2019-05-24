@@ -1,26 +1,41 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import {
+  FormRowInput, FormRowCheckbox, FormRowDropdown, FormRowRadio,
+} from './formRow/Row';
+
 import styles from './form.module.css';
+
+const errorMessages = {
+  required: 'Field is required',
+};
 
 class Form extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      domain: props.domain,
-    };
   }
 
   render() {
     return (
       <div>
         <form className={styles.myForm}>
-          <label htmlFor="customer_name">Name </label>
-          <input type="text" name="customer_name" id="customer_name" onChange={() => {}} />
-          <label htmlFor="email_address">Email </label>
-          <input type="email" name="email_address" id="email_address" onChange={() => {}} />
-          <label htmlFor="comments">Comments</label>
-          <textarea placeholder="test" onChange={() => {}}>{this.state.domain}</textarea>
-          <button type="submit">Submit</button>
+          <FormRowCheckbox label="VIP" fieldName="vip" onChange={() => {}} />
+          <FormRowInput label="First name" fieldName="firstName" errorMessage={errorMessages.required} onChange={() => {}} />
+          <FormRowInput label="Second name" fieldName="secondName" onChange={() => {}} />
+          <FormRowInput label="Last name" fieldName="lastName" errorMessage={errorMessages.required} onChange={() => {}} />
+          <FormRowInput label="Company" fieldName="company" errorMessage={errorMessages.required} onChange={() => {}} />
+          <FormRowInput label="URL" fieldName="url" errorMessage={errorMessages.required} onChange={() => {}} />
+          <FormRowInput label="E-mail" fieldName="email" errorMessage={errorMessages.required} onChange={() => {}} />
+          <FormRowRadio label="Gender" fieldName="gender" optionsLabels={['Male', 'Female']} options={['male', 'female']} errorMessage={errorMessages.required} onChange={() => {}} />
+          <FormRowDropdown label="Title" fieldName="title" options={['CO', 'CTO']} errorMessage={errorMessages.required} onChange={() => {}} />
+          <FormRowDropdown label="City" fieldName="city" options={['London', 'Wroclaw']} errorMessage={errorMessages.required} onChange={() => {}} />
+          <FormRowInput label="Address" fieldName="address" onChange={() => {}} />
+          <FormRowInput label="Found on" fieldName="foundOn" errorMessage={errorMessages.required} onChange={() => {}} />
+          <FormRowInput label="Note" fieldName="note" onChange={() => {}} />
+          <div className={styles.form_footer}>
+            <button className={styles.submit} type="submit">Add prospect</button>
+            <button className={styles.reset}>Clear form</button>
+          </div>
         </form>
       </div>
     );
