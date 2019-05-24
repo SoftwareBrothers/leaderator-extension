@@ -1,0 +1,27 @@
+{
+  "name": "Leaderator",
+  "version": "1.0.0",
+  "description": "Useful tool for adding prospects to reply.io.",
+  "background": {
+    "scripts": ["scripts/background.js"]
+  },
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "content_scripts": [{
+    "js": [
+      "scripts/leaderator.js"
+    ],
+    "css": [
+      "styles/style.css"
+    ],
+    "matches": ["<all_urls>"],
+    "run_at": "document_end",
+    "all_frames": true
+  }],
+  "web_accessible_resources": [
+    "*.html"
+  ],
+  "manifest_version": 2
+}
