@@ -1,22 +1,17 @@
-window.addEventListener('load', function () {
-    console.log('DO SOMETHING');
+window.addEventListener('load', () => {
+  console.info('Leaderator is running.');
 
-    const element = document.createElement('div');
-    element.setAttribute("style", "height:40%");
-    element.setAttribute("id", "leaderator-container");
+  const element = document.createElement('div');
+  element.setAttribute('style', 'height:40%');
+  element.setAttribute('id', 'leaderator-container');
 
-    console.log('modal', element);
+  element.innerHTML = '<iframe id="leader-content" style="height:100%; z-index:99999"></iframe>';
+  document.body.appendChild(element);
+  const iframe = document.getElementById('leader-content');
+  iframe.style.position = 'fixed';
+  iframe.style.top = '0';
+  iframe.style.right = '100px';
 
-    element.innerHTML =
-      `<iframe id="leader-content" style="height:100%"></iframe>`;
-    document.body.appendChild(element);
-    const iframe = document.getElementById("leader-content");
-    iframe.style.position = 'absolute';
-    iframe.style.top = '0';
-    iframe.style.right = '100px';
-
-    console.log('iframe', iframe);
-    iframe.src = chrome.extension.getURL("index.html");
-    iframe.frameBorder = 0;
-
+  iframe.src = chrome.extension.getURL('index.html');
+  iframe.frameBorder = 0;
 });
