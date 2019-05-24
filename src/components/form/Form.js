@@ -30,7 +30,7 @@ class Form extends Component {
 export default Form;
 
 Form.propTypes = {
-  domain: PropTypes.string(),
+  domain: PropTypes.string,
 };
 
 Form.defaultProps = {
