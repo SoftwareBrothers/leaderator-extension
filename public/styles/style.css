@@ -1,7 +1,3 @@
-body {
-    font-family: 'Oswald', sans-serif;
-}
-
 #leaderator-container.open{
     animation: slide 0.5s forwards;
     animation-delay: 2s;
