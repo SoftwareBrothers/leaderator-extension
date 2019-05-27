@@ -32,8 +32,6 @@ class Leaderator extends Component {
     currentState.host = window.location.hostname;
 
     if (localStorage.getItem('token') !== '') {
-      console.log('tok', localStorage.getItem('token'));
-
       currentState.token = localStorage.getItem('token');
     }
 
@@ -99,6 +97,10 @@ class Leaderator extends Component {
   render() {
     return (
       <div className={styles.container}>
+        <div className={styles.header}>
+          <span className={styles.logo}></span>
+          <span className={styles.title}>Leaderator</span>
+        </div>
         {
           this.state.token ? (
             <Form

@@ -11,10 +11,6 @@ class Login extends Component {
     render() {
         return (
           <div className={styles.login_container}>
-              <div className={styles.header}>
-                  <span className={styles.logo}></span>
-                  <span className={styles.title}>Leaderator</span>
-              </div>
               <div className={styles.form_container}>
                   <form>
                       <FormRowInput fieldName="email" label="Email" errorMessage="Field is required"

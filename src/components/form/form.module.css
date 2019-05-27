@@ -2,7 +2,7 @@
     display: grid;
     grid-template-rows: 40px;
     grid-gap: .8em;
-    background: #eee;
+    background: #f8f9fa;
     padding: 1.2em;
     width: 290px;
 }

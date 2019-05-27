@@ -7,10 +7,16 @@
 label{
 }
 
-.form_row input, .form_row select {
+input {
+    background: #f8f9fa;
+    outline: none;
+    border-width: 0;
+}
+
+.custom_input, .custom_select {
     height: 28px;
     outline: none;
-    /*border-bottom: 1px solid #bbb;*/
+    border-bottom: 1px solid #bbb;
     width: 250px;
     margin-bottom: 10px;
 }
@@ -21,6 +27,7 @@ label{
     justify-content: space-between;
     margin-top: 5px;
     width: 250px;
+    border: none;
 }
 
 .form_row input:hover {
