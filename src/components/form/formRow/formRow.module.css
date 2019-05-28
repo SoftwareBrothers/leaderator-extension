@@ -5,12 +5,20 @@
 }
 
 label{
-    margin-bottom: 5px;
 }
-.form_row input, .form_row select {
+
+input {
+    background: #f8f9fa;
+    outline: none;
+    border-width: 0;
+}
+
+.custom_input, .custom_select {
     height: 28px;
-    border: 1px solid #bbb;
+    outline: none;
+    border-bottom: 1px solid #bbb;
     width: 250px;
+    margin-bottom: 10px;
 }
 
 .radioOptions {
@@ -19,10 +27,15 @@ label{
     justify-content: space-between;
     margin-top: 5px;
     width: 250px;
+    border: none;
 }
 
 .form_row input:hover {
-    border: 1px solid #ddd;
+    /*border: 1px solid #ddd;*/
+}
+
+.form_row input:focus {
+    outline: none;
 }
 
 .form_row select {
