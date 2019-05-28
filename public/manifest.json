@@ -7,7 +7,8 @@
   },
   "permissions": [
     "storage",
-    "tabs"
+    "tabs",
+    "http://private-63e5ba-leaderator2.apiary-mock.com/"
   ],
   "content_scripts": [{
     "js": [
