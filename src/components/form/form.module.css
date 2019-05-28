@@ -1,17 +1,22 @@
-.myForm {
+.form_container {
+    height: 850px;
+    overflow: auto;
+}
+
+.form {
     display: grid;
     grid-template-rows: 40px;
-    grid-gap: .8em;
     background: #f8f9fa;
     padding: 1.2em;
-    width: 290px;
+    width: 250px;
+    margin-bottom: 10px;
+    height: 920px;
 }
 
 .form_footer {
     display: grid;
     grid-template-columns: 100px 100px;
     justify-content: space-between;
-    width: 250px;
 }
 
 .form_footer button{
@@ -21,14 +26,27 @@
 }
 
 .submit {
-    background: #006400;
+    background: #fff;
+    color: #000;
+    height: 30px;
+    border: 1px solid #e6282b;
+    width: 100px;
+    margin-top: 10px;
+}
+
+.reset {
+    background: #e6282b;
     color: #fff;
+    height: 30px;
+    border: 1px solid #fff;
+    width: 100px;
+    margin-top: 10px;
 }
 
 .submit:hover{
-    filter: brightness(150%);
+    filter: brightness(97%);
 }
 
 .reset:hover {
-    filter: brightness(70%);
+    filter: brightness(95%);
 }

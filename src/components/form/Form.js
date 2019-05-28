@@ -17,8 +17,8 @@ class Form extends Component {
 
   render() {
     return (
-      <div>
-        <form className={styles.myForm}>
+      <div className={styles.form_container}>
+        <form className={styles.form}>
           <FormRowCheckbox label="VIP" fieldName="vip" onChange={() => {}} />
           <FormRowInput label="First name" fieldName="firstName" errorMessage={errorMessages.required} onChange={() => {}} />
           <FormRowInput label="Second name" fieldName="secondName" onChange={() => {}} />
@@ -37,7 +37,6 @@ class Form extends Component {
             <button className={styles.submit} type="submit">Add prospect</button>
             <button className={styles.reset}>Clear form</button>
           </div>
-          <button onClick={(e) => this.props.onLogout(e)}>logOut</button>
         </form>
       </div>
     );

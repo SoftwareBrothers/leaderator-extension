@@ -13,9 +13,9 @@ class Leaderator extends Component {
       email: '',
       password: '',
       fieldOptions: {
-        titles: [],
-        cities: [],
-        countries: [],
+        titles: ['CO', 'CTO', 'PM'],
+        cities: ['London', 'Warsaw', 'New York'],
+        countries: ['Poland', 'Japan', 'USA'],
       },
 
     };
@@ -100,6 +100,8 @@ class Leaderator extends Component {
         <div className={styles.header}>
           <span className={styles.logo}></span>
           <span className={styles.title}>Leaderator</span>
+          {this.state.token && <span className={styles.logout} onClick={(e) => this.onLogout(e)}><i
+            className="fas fa-sign-out-alt fa-2x"></i></span>}
         </div>
         {
           this.state.token ? (
