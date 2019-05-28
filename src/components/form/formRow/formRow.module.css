@@ -2,6 +2,12 @@
     display: grid;
     grid-row-gap: 3px;
     grid-template-columns: 250px;
+    border-bottom: 1px solid #bbb;
+    margin-bottom: 5px;
+}
+
+.form_row:hover {
+    border-bottom: 1px solid #ddd;
 }
 
 label{
@@ -16,7 +22,7 @@ input {
 .custom_input, .custom_select {
     height: 28px;
     outline: none;
-    border-bottom: 1px solid #bbb;
+
     width: 250px;
     margin-bottom: 10px;
 }
@@ -28,10 +34,6 @@ input {
     margin-top: 5px;
     width: 250px;
     border: none;
-}
-
-.form_row input:hover {
-    /*border: 1px solid #ddd;*/
 }
 
 .form_row input:focus {

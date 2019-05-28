@@ -1,6 +1,5 @@
 .container {
     font-family: 'Dosis', sans-serif;
-    width: 300px;
     margin-top: 40px;
 }
 
@@ -9,7 +8,7 @@
     height: 50px;
     background: #e6282b;
     display: grid;
-    grid-template-columns: 90px auto;
+    grid-template-columns: 70px auto 35px;
     align-items: center;
     margin-bottom: 15px;
     color: #fff;
@@ -26,4 +25,8 @@
 .title {
     font-size: 25px;
     font-weight: 700;
+}
+
+.logout {
+    cursor: pointer;
 }
