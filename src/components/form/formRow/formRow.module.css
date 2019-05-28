@@ -52,3 +52,20 @@ input {
     color: #ff0000;
     font-size: 12px;
 }
+
+.label {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+
+
+.find_email, .check_email {
+    cursor: pointer;
+    font-size: 12px;
+    color: #00A400;
+}
+
+.find_email:hover, .check_email:hover {
+    filter: brightness(95%);
+}
