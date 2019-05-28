@@ -7,7 +7,8 @@
   },
   "permissions": [
     "storage",
-    "tabs"
+    "tabs",
+    "http://private-63e5ba-leaderator2.apiary-mock.com/"
   ],
   "content_scripts": [{
     "js": [
@@ -15,7 +16,6 @@
     ],
     "css": [
       "styles/fonts.css",
-      "styles/font-awesome.css",
       "styles/style.css"
     ],
     "matches": ["<all_urls>"],
@@ -23,10 +23,7 @@
     "all_frames": true
   }],
   "web_accessible_resources": [
-    "*.html",
-    "/fonts/fa-solid-900.ttf",
-    "/fonts/fa-solid-900.woff",
-    "/fonts/fa-solid-900.woff2"
+    "*.html"
   ],
   "manifest_version": 2
 }
