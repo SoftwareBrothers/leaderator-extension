@@ -2,7 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './formRow.module.css';
 
-export const FormRowInput = props => (
+const getFormField = (props) => ({
+  text: <InputRow {...props} />,
+  password: <PasswordRow {...props} />,
+  radio: <RadioRow {...props} />,
+  checkbox: <CheckboxRow {...props} />,
+  select: <SelectRow {...props} />,
+});
+
+
+export const FormRow = props => (
+    getFormField(props)[props.typeField]
+);
+
+export const InputRow = props => (
   <div className={styles.form_row}>
       <div className={styles.label}>
           <label htmlFor={props.fieldName}>{props.label}</label>
@@ -14,14 +27,14 @@ export const FormRowInput = props => (
         type="text"
         name={props.fieldName}
         id={props.fieldName}
-        onChange={e => props.onChange(e)}
+        onChange={props.onChange}
         value={props.value}
       />
       {props.error && <span className={styles.error}>{props.errorMessage}</span>}
   </div>
 );
 
-export const FormRowPassword = props => (
+export const PasswordRow = props => (
   <div className={styles.form_row}>
       <label htmlFor={props.fieldName}>{props.label}</label>
       <input
@@ -29,13 +42,13 @@ export const FormRowPassword = props => (
         type="password"
         name={props.fieldName}
         id={props.fieldName}
-        onChange={e => props.onChange(e)}
+        onChange={props.onChange}
       />
       {props.error && <span className={styles.error}>{props.errorMessage}</span>}
   </div>
 );
 
-export const FormRowDropdown = props => (
+export const SelectRow = props => (
   <div className={styles.form_row}>
       <label htmlFor={props.fieldName}>{props.label}</label>
       <select
@@ -51,7 +64,7 @@ export const FormRowDropdown = props => (
   </div>
 );
 
-export const FormRowCheckbox = props => (
+export const CheckboxRow = props => (
   <div className={styles.form_row_checkbox}>
       <label htmlFor={props.fieldName}>{props.label}</label>
       <input
@@ -59,13 +72,13 @@ export const FormRowCheckbox = props => (
         type="checkbox"
         name={props.fieldName}
         id={props.fieldName}
-        onChange={e => props.onChange(e)}
+        onChange={props.onChange}
       />
       {props.error && <span className={styles.error}>{props.errorMessage}</span>}
   </div>
 );
 
-export const FormRowRadio = props => (
+export const RadioRow = props => (
   <div className={styles.form_row_radio}>
       <label htmlFor={props.fieldName}>{props.label}</label>
       <div className={styles.radioOptions}>
@@ -73,7 +86,7 @@ export const FormRowRadio = props => (
             <div key={index + 1}>
                 <span>{props.optionsLabels[index]}</span>
                 <input className={styles.custom_radio} type="radio" value={item} name={props.fieldName}
-                       onChange={e => props.onChange(e)}/>
+                       onChange={props.onChange}/>
             </div>
           ))}
       </div>
@@ -82,7 +95,7 @@ export const FormRowRadio = props => (
 );
 
 
-FormRowInput.propTypes = {
+InputRow.propTypes = {
     fieldName: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     errorMessage: PropTypes.string,
@@ -93,13 +106,13 @@ FormRowInput.propTypes = {
     verifyButton: PropTypes.bool,
 };
 
-FormRowInput.defaultProps = {
+InputRow.defaultProps = {
     verifyButton: false,
     error: false,
     errorMessage: '',
 };
 
-FormRowPassword.propTypes = {
+PasswordRow.propTypes = {
     fieldName: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     errorMessage: PropTypes.string,
@@ -107,12 +120,12 @@ FormRowPassword.propTypes = {
     error: PropTypes.bool,
 };
 
-FormRowPassword.defaultProps = {
+PasswordRow.defaultProps = {
   errorMessage: '',
   error: false,
 };
 
-FormRowCheckbox.propTypes = {
+CheckboxRow.propTypes = {
     fieldName: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     errorMessage: PropTypes.string,
@@ -120,31 +133,26 @@ FormRowCheckbox.propTypes = {
     error: PropTypes.bool,
 };
 
-FormRowCheckbox.defaultProps = {
+CheckboxRow.defaultProps = {
     errorMessage: '',
     error: false,
 };
 
-FormRowRadio.propTypes = {
+RadioRow.propTypes = {
     fieldName: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     errorMessage: PropTypes.string,
     onChange: PropTypes.func.isRequired,
-    options: PropTypes.arrayOf(PropTypes.string).isRequired,
-    optionsLabels: PropTypes.arrayOf(PropTypes.string).isRequired,
     error: PropTypes.bool,
 };
 
-FormRowRadio.defaultProps = {
+RadioRow.defaultProps = {
     errorMessage: '',
     error: false,
 };
 
-FormRowDropdown.propTypes = {
+SelectRow.propTypes = {
     fieldName: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
-    errorMessage: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    options: PropTypes.arrayOf(PropTypes.string).isRequired,
-    error: PropTypes.bool.isRequired,
 };

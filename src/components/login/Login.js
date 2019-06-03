@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {FormRowInput, FormRowPassword} from '../form/formRow/Row';
+import {FormRow} from '../form/formRow/Row';
 import styles from './login.module.css';
 
 class Login extends Component {
@@ -13,12 +13,23 @@ class Login extends Component {
           <div className={styles.login_container}>
               <div className={styles.form_container}>
                   <form>
-                      <FormRowInput fieldName="email" label="Email" errorMessage="Field is required"
-                                    onChange={e => this.props.onChange(e)} error={false}/>
-                      <FormRowPassword fieldName="password" label="Password" errorMessage="Field is required"
-                                       onChange={e => this.props.onChange(e)} error={false}/>
-                      <button type="submit" className={styles.login_button} onClick={e => this.props.onLogin(e)}>Login
-                      </button>
+                      <FormRow
+                        fieldName="email"
+                        label="Email"
+                        errorMessage="Field is required"
+                        onChange={this.props.onChange}
+                        error={false}
+                        typeField="text"
+                      />
+                      <FormRow
+                        fieldName="password"
+                        label="Password"
+                        errorMessage="Field is required"
+                        onChange={this.props.onChange}
+                        error={false}
+                        typeField="password"
+                      />
+                      <button type="submit" className={styles.login_button} onClick={this.props.onLogin}>Login</button>
                   </form>
               </div>
           </div>
